@@ -25,10 +25,8 @@ export default function ChemicalGPT({ chemicalName }: {chemicalName:string}) {
                     body: chemicalName
                 })
             ).json();
-
-            let dataObj = JSON.parse(data);
             
-            setChemicalInfo(dataObj);
+            setChemicalInfo(data);
             setIsLoading(false);
         }
 
