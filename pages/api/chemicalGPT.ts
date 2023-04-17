@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest, NextResponse } from 'next/server'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
@@ -7,14 +7,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export const config = {
-    runtime: "edge"
-}
+
 
 
 export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
+    req: NextRequest
   ) {
     if (req.method === "POST") {
         console.log(req.body)
@@ -28,6 +25,6 @@ export default async function handler(
 
         const chatGPTMessage = chatGPT.data.choices[0].message;
         console.log(chatGPTMessage?.content)
-        res.status(200).json(chatGPTMessage?.content);
+        return NextResponse.json(chatGPTMessage?.content);
     }
   }
