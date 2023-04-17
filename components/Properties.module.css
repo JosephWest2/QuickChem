@@ -1,0 +1,8 @@
+.tableValue {
+    margin: 0;
+    padding: 0;
+
+}
+.tableValue:nth-child(odd) {
+    color: var(--color-secondary);
+}

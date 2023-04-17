@@ -1,0 +1,71 @@
+.chemicalInput {
+    max-width: 1200px;
+    margin: 1rem 0 0 2rem;
+    display:flex;
+    align-items: center;
+    height: 3rem;
+    position: relative;
+    
+}
+.chemicalInput > input {
+    height: 100%;
+    width: 75%;
+    background-color: var(--color-bg);
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 1.5em;
+    padding-left: 0.6rem;
+    border: 1px solid black;
+    color: whitesmoke;
+}
+
+.chemicalInput > input:focus {
+    outline: none;
+}
+
+.chemicalInput > button {
+    height: 100%;
+    width: 25%;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: none;
+    background-color: rgb(58, 58, 58);
+    color: lightgrey;
+    font-size: 1.5em;
+    transition: background-color 200ms ease-out;
+    border: 1px solid black;
+    border-left: none;
+}
+.chemicalInput > button[data-found="false"]::before {
+    content: "Compound not found";
+    position: absolute;
+    color: red;
+    margin-right: 1rem;
+    top: 50%;
+    right: 25%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.chemicalInput > button:hover {
+    background-color: var(--color-bg);
+    cursor: pointer;
+}
+
+.sdsContainer {
+    background-color: whitesmoke;
+    margin: 2rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+        "Title Title Title Title"
+        "Image Image Description Description"
+        "Safety Safety Properties Properties"
+        "Synonyms Synonyms Synonyms Reference";
+    gap: 1rem;
+    max-width: 1200px;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 10px rgba(0,0,0, 0.6);
+
+}
