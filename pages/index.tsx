@@ -80,7 +80,6 @@ export default function Home() {
           <input placeholder="Chemical name" value={chemicalNameInput} onKeyDown={(e) => inputKeyDown(e)} onChange={(e) => {setChemicalNameInput(e.target.value)}}></input>
           <button data-found={searchError ? "false" : "true"} onClick={() => setChemicalName(chemicalNameInput)}><div style={{height:"100%", display:"inline-flex", alignItems:"center"}}><img src="chemical.png" style={{width:"1em", marginRight:"0.2rem"}}></img><div>Search</div></div></button>
         </div>
-        <ChemicalGPT chemicalName={validatedChemicalName}/>
         {SDS ? <>
         <div className={styles.sdsContainer}>
           <Description SDS={SDS}/>
@@ -92,6 +91,7 @@ export default function Home() {
           <a style={{gridArea:"Reference", justifySelf:"end", textDecoration:"none"}} target="_blank" href={`https://pubchem.ncbi.nlm.nih.gov/compound/${validatedChemicalName}`}>More Info</a>
         </div>
         </> : <></>}
+        <ChemicalGPT chemicalName={validatedChemicalName}/>
         <div style={{display:"flex", flexDirection:"row", marginLeft: "2rem"}}>
           <img src="PubChemLogo.png" style={{height: "3rem", width:"auto", padding: "0.5rem", marginBottom:"1rem"}}></img>
           <img src='OpenAILogo.png' style={{height: "3rem", width:"auto", padding: "0.5rem", marginBottom:"1rem"}}></img>
