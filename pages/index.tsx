@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [chemicalName, setChemicalName] = useState<string>("water");
+  const [chemicalName, setChemicalName] = useState<string>("benzene");
   const [chemicalNameInput, setChemicalNameInput] = useState<string>("");
   const [validatedChemicalName, setValidatedChemicalName] = useState<string>("");
   const [SDS, setSDS] = useState<any>();
